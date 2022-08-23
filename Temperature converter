@@ -1,0 +1,26 @@
+from breezypythongui import EasyFrame
+
+class temperatureconverter(EasyFrame):
+    
+    def __init__(self):
+        EasyFrame.__init__(self, title="Temeperature converter")
+        self.addLabel(text="Farenheit",row=0,column=0);
+        self.farenheit =self.addIntegerField(value=32,row=0,column=0)
+        self.addLabel(text="Celcius",row=1,column=0)
+        self.celcius = self.addIntegerField(value=0,row=1,column=1)
+        
+        self.addButton(text=">>>",row=2,column=0,command=self.convertcelciusC)
+        self.addButton(text="<<<", row =2,column=1, command= self.convertfarenheit)
+        
+    def selfconvertcelcius(self):
+        x=self.farenheit.getNumber()
+        valuec=(5/9 * x -32)
+        self.celcius.setNumber(valuec)
+        
+    def selfconvertfarenheit(self):
+        y=self.celcius.getNumber()
+        valueT=(9/5 * y +32)
+        self.farenheit.setNumber(valueT)
+        
+        
+#temperatureconverter().mainloop()
