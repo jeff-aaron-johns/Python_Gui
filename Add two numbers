@@ -1,0 +1,21 @@
+from breezypythongui import EasyFrame
+
+class AddTwoNumbers(EasyFrame):
+    def__init__(self):
+        EasyFrame.__init__(self, title="Add Two Numbers")
+        self.addLabel(text="First Number",row=0,column=0)
+        self.F1= self.addIntegerField(value=0,row=0,column=1)
+        self.addLabel(text="Second Number",row=1,column=0)
+        self.F2 self.addIntegerField(value=0,row=1,column=1)
+        self.addButton(text="Add",row=2,column=0,columnspan=2,command=self.add)
+        self.addLabel=(text="Sum",row=3,column=0)
+        self.sum=self.addIntegerField(value=0,row=3,column=0,state="readonly")
+
+    def add(self)
+         x=self.F1.getNumber()
+         y=self.F2.getNumber()
+         sum=x+y
+         self.sum.setNumber(sum)
+    
+    
+#AddTwoNumber().mainloop()
